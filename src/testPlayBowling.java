@@ -16,10 +16,20 @@ public class testPlayBowling{
 	
 	@Test
 	public void testScoreBasic() {
-		PlayBowling b = new PlayBowling(3);
+		PlayBowling b = new PlayBowling();
+		b.addTuple(3, 7);
+		b.addTuple(3, 7);
+		b.addTuple(3, 7);
+		b.addTuple(3, 7);
+		b.addTuple(3, 7);
+		b.addTuple(3, 7);
+		b.addTuple(3, 7);
+		b.addTuple(3, 7);
+		b.addTuple(3, 7);
+		b.addTuple(3, 7);
 		int score = b.scoreBasic();
 		System.out.println(score);
-		assert(score==0);
+		assert(score==100);
 		
 	}
 	
@@ -92,7 +102,25 @@ public class testPlayBowling{
 		b.addTuple(10, 0);
 		b.addTuple(10, 0);
 		int score = b.scoreReal();
-		assert(score==300);
+		
+		int scorePrevu = 270 +b.bonus.get(0).get(0);
+		if(b.bonus.get(0).get(0)==10){
+			scorePrevu += b.bonus.get(0).get(0) + b.bonus.get(1).get(0);
+			System.out.println("bonus 1 : " +b.bonus.get(0).get(0) + "et " +b.bonus.get(0).get(1));
+			System.out.println("bonus 2 : " +b.bonus.get(1).get(0));
+		}
+			
+		else{
+			scorePrevu += b.bonus.get(0).get(0) + b.bonus.get(0).get(1);
+			System.out.println("bonus 1 : " +b.bonus.get(0).get(0) + "et " +b.bonus.get(0).get(1));
+		}
+			
+		
+		System.out.println("score prévu : " +scorePrevu);
+		System.out.println("score reel : " +score);
+		
+
+		assert(score==scorePrevu);
 		
 		
 	}
