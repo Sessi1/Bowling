@@ -46,7 +46,7 @@ test {
     useJUnit()
 
 
-    testPlayBowling {
+    testLogging {
 
 
         events "passed", "skipped", "failed"
