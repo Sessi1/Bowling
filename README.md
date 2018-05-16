@@ -1,3 +1,3 @@
 # Bowling
-Sessy Maesta
-Mohamed Akil NAGATI
+* Sessi BOTON
+* Mohamed Akil NAGATI
